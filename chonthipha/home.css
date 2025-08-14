@@ -1,0 +1,63 @@
+body {
+  background-color: pink;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  position: relative;
+}
+
+.menu-item {
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  padding: 20px 40px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 20px;
+  position: absolute;
+  text-align: center;
+  animation: float 2s infinite ease-in-out;
+  transition: transform 0.3s;
+}
+
+.menu-item:hover {
+  transform: scale(1.1);
+}
+
+/* Positioning */
+.home {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.profile {
+  top: 10%;
+  right: 10%;
+}
+
+.contact {
+  top: 10%;
+  left: 10%;
+}
+
+.food {
+  bottom: 10%;
+  right: 10%;
+}
+
+.places {
+  bottom: 10%;
+  left: 10%;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -10px);
+  }
+}
