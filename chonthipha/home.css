@@ -2,62 +2,73 @@ body {
   background-color: pink;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
   height: 100vh;
-  position: relative;
-}
-
-.menu-item {
-  background-color: orange;
-  color: black;
-  font-weight: bold;
-  padding: 20px 40px;
-  border-radius: 50%;
-  text-decoration: none;
-  font-size: 20px;
-  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  place-items: center;
+  font-size: 60px;
   text-align: center;
-  animation: float 2s infinite ease-in-out;
-  transition: transform 0.3s;
 }
 
-.menu-item:hover {
-  transform: scale(1.1);
+.center {
+  grid-column: 2;
+  grid-row: 1 / span 2;
 }
 
-/* Positioning */
-.home {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.top-left {
+  grid-column: 1;
+  grid-row: 1;
 }
 
-.profile {
-  top: 10%;
-  right: 10%;
+.top-right {
+  grid-column: 3;
+  grid-row: 1;
 }
 
-.contact {
-  top: 10%;
-  left: 10%;
+.bottom-left {
+  grid-column: 1;
+  grid-row: 2;
 }
 
-.food {
-  bottom: 10%;
-  right: 10%;
+.bottom-right {
+  grid-column: 3;
+  grid-row: 2;
 }
 
-.places {
-  bottom: 10%;
-  left: 10%;
+/* เอฟเฟกต์เด้งเมื่อเอาเมาส์ชี้ */
+.hover-bounce {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
-/* Animations */
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0);
+.hover-bounce:hover {
+  transform: translateY(-10px);
+}
+
+/* Responsive สำหรับจอเล็ก */
+@media (max-width: 50px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+    font-size: 40px;
+    padding: 20px 0;
   }
-  50% {
-    transform: translate(0, -10px);
+
+  .center,
+  .top-left,
+  .top-right,
+  .bottom-left,
+  .bottom-right {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
+
+
+
+
+
+
