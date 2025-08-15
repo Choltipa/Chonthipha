@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: pink;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 30px;
+}
+
+.profile-img {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.profile-img img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.profile-text {
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+/* ก้อนเมฆ */
+.title {
+  background-color: orange;
+  display: inline-block;
+  padding: 15px 40px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  color: black;
+  border-radius: 50px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* ทำป้ายเป็นก้อนเมฆด้วย pseudo-elements */
+.title::before,
+.title::after {
+  content: "";
+  position: absolute;
+  background-color: orange;
+  border-radius: 50%;
+}
+
+.title::before {
+  width: 50px;
+  height: 50px;
+  top: -20px;
+  left: -25px;
+}
+
+.title::after {
+  width: 60px;
+  height: 60px;
+  top: -25px;
+  right: -30px;
+}
+
+.info {
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+
+.info strong {
+  font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 50px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-text {
+    max-width: 100%;
+  }
+}
