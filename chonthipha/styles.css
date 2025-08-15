@@ -13,7 +13,7 @@ body {
 .left-bar, .right-bar {
   position: absolute;
   top: 0;
-  width: 50px;
+  width: 5vw; /* Responsive width */
   height: 100%;
   background-color: #c40000;
 }
@@ -36,8 +36,57 @@ body {
   background-color: #d8c6ff;
   color: black;
   text-decoration: none;
-  font-size: 48px;
+  font-size: clamp(24px, 5vw, 48px); /* Responsive Font */
   font-family: 'Brush Script MT', cursive;
-  padding: 10px 20px;
+  padding: 0.5em 1em;
   border-radius: 5px;
+  white-space: nowrap;
+
+  /* เอฟเฟกต์ตอนโหลด */
+  animation: zoomFade 1s ease forwards;
+}
+
+/* Hover → เด้งขึ้น */
+.name-link:hover {
+  animation: bounce 0.6s ease;
+}
+
+/* Zoom + Fade-in ตอนโหลด */
+@keyframes zoomFade {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Bounce เวลา Hover */
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  30% {
+    transform: translate(-50%, -60%) scale(1.05);
+  }
+  50% {
+    transform: translate(-50%, -48%) scale(0.98);
+  }
+  70% {
+    transform: translate(-50%, -52%) scale(1.02);
+  }
+}
+
+/* Responsive ปรับเมื่อจอเล็ก */
+@media (max-width: 600px) {
+  .left-bar, .right-bar {
+    width: 8vw;
+  }
+  
+  .name-link {
+    font-size: clamp(20px, 6vw, 32px);
+    padding: 0.4em 0.8em;
+  }
 }
