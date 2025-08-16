@@ -1,39 +1,68 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
-  <link rel="stylesheet" href="contact.css">
-</head>
-<body>
+body {
+  background-color: pink;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
 
-  <div class="container">
-    <div class="title">
-      <a href="home.html">Contact</a>
-    </div>
+.container {
+  padding: 50px 20px;
+}
 
-    <div class="info">
-      <p><strong>FB:</strong> 
-        <a href="https://www.facebook.com/share/1AymtMAvz9/" target="_blank">
-          ชลธิภา ทัพเสน
-        </a>
-      </p>
+/* กล่องเมฆ */
+.title {
+  display: inline-block;
+  background-color: orange;
+  padding: 20px 40px;
+  font-size: 40px;
+  font-weight: bold;
+  border-radius: 50% 40% 50% 40% / 40% 50% 40% 50%; /* ทำทรงคล้ายเมฆ */
+  margin-bottom: 40px;
+  transition: transform 0.3s ease;
+}
 
-      <p><strong>IG:</strong> 
-        <a href="https://www.instagram.com/chonthipha_thapsen?igsh=Znp6d2VpeWpod2Ey" target="_blank">
-          Chonthipha_thapsen
-        </a>
-      </p>
+.title:hover {
+  transform: scale(1.1);
+}
 
-      <p><strong>Gmail:</strong> 
-        <a href="mailto:ths.Chonthipha@gmail.com">
-          ths.Chonthipha@gmail.com
-        </a>
-      </p>
-    </div>
-  </div>
+/* ลิงก์ Contact */
+.title a {
+  text-decoration: none;
+  color: black;
+}
 
-</body>
-</html>
+/* ข้อมูลติดต่อ */
+.info {
+  font-size: 28px;
+  line-height: 2;
+}
 
+.info p {
+  margin: 15px 0;
+}
+
+.info a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.info a:hover {
+  color: darkblue;
+  transform: scale(1.1);
+  display: inline-block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 28px;
+    padding: 15px 30px;
+  }
+
+  .info {
+    font-size: 20px;
+  }
+}
